@@ -261,20 +261,22 @@
     opacity: 0;
     transform: translateY(8px);
     pointer-events: none;
-  .timeline-card {
-    position: relative;
-    background-color: #1d809f;
-    color: #fff;
-    border-radius: 0.6rem;
-    padding: 1.2rem 1rem;
-    min-height: auto;
-    width: 85%;
-    text-align: left;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
   }
+
+  .experience-timeline .timeline-card:hover .timeline-role,
+  .experience-timeline .timeline-card:hover .timeline-company,
+  .experience-timeline .timeline-card:hover .timeline-tenure {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+
+  .experience-timeline .timeline-card:hover .timeline-desc {
+    opacity: 1;
     transform: none;
     pointer-events: auto;
   }
+}
+
 /* Desktop styles - no flip effect needed */
 
 .project-card {
