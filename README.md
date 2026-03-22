@@ -19,3 +19,4 @@ View this jekyll theme in action [here](https://vidhyav656.github.io/startbootst
 
 ---------
 For more details, read the [documentation](http://jekyllrb.com/)
+
