@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 {% if site.lang %}<html lang="{{ site.lang }}">{% else %}<html>{% endif %}
-<html lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -14,7 +13,10 @@
     {% endcapture %}
     <meta name="description" content="{{ description }}">
     {% if page.keywords %}
-    <meta name="keywords" content="{{ keywords }}">{% endif %}
+    <meta name="keywords" content="{{ page.keywords }}">
+    {% else %}
+    <meta name="keywords" content="{{ site.keywords }}">
+    {% endif %}
     <!-- Bootstrap Core CSS -->
     <link href="{{ site.baseurl }}/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom Fonts -->
@@ -23,6 +25,7 @@
     <link href="{{ site.baseurl }}/vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="{{ site.baseurl }}/assets/css/stylish-portfolio.min.css" rel="stylesheet">
+    <link href="{{ site.baseurl }}/assets/css/portfolio-custom.css" rel="stylesheet">
 </head>
 
 <body id="page-top">
@@ -33,12 +36,16 @@
 
     {{ content }}
 
+    {% if page.show_footer != false %}
     <!-- Footer -->
     {% include footer.html %}
+    {% endif %}
+    {% if page.show_scroll_top != false %}
     <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded js-scroll-trigger" href="#page-top">
       <i class="fas fa-angle-up"></i>
     </a>
+    {% endif %}
     <!-- Bootstrap core JavaScript -->
     <script src="{{ site.baseurl }}/vendor/jquery/jquery.min.js"></script>
     <script src="{{ site.baseurl }}/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
